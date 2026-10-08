@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Reken - Profil Rental Mobil & Transportasi Wisata Yogyakarta</title>
+  <meta name="description" content="Profil resmi Reken: penyedia layanan rental mobil terpercaya di Yogyakarta. Menyediakan sewa lepas kunci, all-in supir berpengalaman, paket wisata Jogja, dan drop luar kota.">
+  
+  <link rel="icon" type="image/png" href="src/images/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              deep: '#081142',
+              navy: '#0D1B66',
+              blue: '#12289E',
+              electric: '#2563EB',
+              sky: '#38BDF8',
+              pill: '#EDF2FE'
+            },
+            dark: {
+              bg: '#050A26',
+              surface: '#0A1340'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          },
+          borderRadius: {
+            '3xl': '1.5rem',
+            '4xl': '2rem',
+            '5xl': '2.5rem'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-brand-blue selection:text-white">
+
+  <!-- Header Navigation -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 sm:py-4 px-3 sm:px-6">
+    <div id="header-island-container" class="max-w-7xl mx-auto backdrop-blur-2xl bg-white/90 border border-slate-200/90 rounded-full px-4 sm:px-6 py-2.5 sm:py-3 shadow-lg shadow-brand-deep/[0.04] flex items-center justify-between transition-all duration-300 header-island">
+      
+      <!-- Brand Logo using Real Image Asset (src/images/logo.png) -->
+      <a href="index.html" class="flex items-center gap-3 group" id="brand-logo-link">
+        <img src="src/images/logo.png" alt="Reken Logo" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl object-contain shadow-xs transition-transform duration-300 group-hover:scale-105">
+        <div class="flex flex-col">
+          <span class="text-xl font-black text-brand-deep tracking-tight flex items-center gap-0.5">
+            Reken<span class="text-brand-electric">.id</span>
+          </span>
+          <span class="text-[10px] uppercase tracking-wider font-semibold text-slate-400 -mt-0.5">
+            Rental &amp; Wisata Jogja
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav: 5 Clean Links (No Excessive Badges or Pulses) -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-semibold text-slate-600" id="desktop-navigation">
+        <a href="tentang.html" class="nav-link-item active text-brand-blue px-4 py-2 rounded-full hover:bg-slate-100/70 transition-all">
+          Tentang Kami
+        </a>
+        <a href="index.html#mitra" class="nav-link-item px-4 py-2 rounded-full hover:text-brand-blue hover:bg-slate-100/70 transition-all">
+          Mitra
+        </a>
+        <a href="index.html#fitur" class="nav-link-item px-4 py-2 rounded-full hover:text-brand-blue hover:bg-slate-100/70 transition-all">
+          Fitur
+        </a>
+        <a href="index.html#harga" class="nav-link-item px-4 py-2 rounded-full hover:text-brand-blue hover:bg-slate-100/70 transition-all">
+          Harga
+        </a>
+        <a href="kontak.html" class="nav-link-item px-4 py-2 rounded-full hover:text-brand-blue hover:bg-slate-100/70 transition-all">
+          Kontak
+        </a>
+      </nav>
+
+      <!-- CTA Button: Download Sekarang with Icon Library -->
+      <div class="hidden sm:flex items-center gap-3">
+        <button type="button" class="btn-download-glow btn-open-download-modal text-white text-xs sm:text-sm font-bold px-6 py-2.5 rounded-full flex items-center gap-2.5 shadow-md shadow-brand-blue/30" id="nav-cta-download">
+          <i class="fa-solid fa-download text-sm text-brand-sky"></i>
+          <span>Download Sekarang</span>
+        </button>
+      </div>
+
+      <!-- Mobile Button -->
+      <div class="flex lg:hidden items-center gap-2">
+        <button type="button" class="btn-open-download-modal sm:hidden px-3.5 py-1.5 rounded-full bg-brand-deep text-white text-xs font-bold flex items-center gap-1.5 shadow-sm">
+          <i class="fa-solid fa-mobile-screen-button text-xs text-brand-sky"></i>
+          <span>App</span>
+        </button>
+        <button id="mobile-menu-toggle" type="button" class="p-2 rounded-full text-slate-700 hover:bg-slate-100" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars text-lg text-slate-700"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-menu-drawer" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden">
+    <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-slate-100">
+          <div class="flex items-center gap-2.5">
+            <img src="src/images/logo.png" alt="Reken Logo" class="w-8 h-8 rounded-lg object-contain">
+            <span class="font-bold text-lg text-brand-deep">Reken<span class="text-brand-electric">.id</span></span>
+          </div>
+          <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-slate-600" aria-label="Tutup Menu">
+            <i class="fa-solid fa-xmark text-lg text-slate-500"></i>
+          </button>
+        </div>
+        <nav class="mt-6 flex flex-col gap-2 text-sm font-semibold text-slate-700">
+          <a href="tentang.html" class="px-4 py-3 rounded-2xl text-brand-blue bg-blue-50/70 font-semibold flex items-center justify-between">
+            <span>Tentang Kami</span>
+            <i class="fa-solid fa-chevron-right text-xs text-brand-blue"></i>
+          </a>
+          <a href="index.html#mitra" class="px-4 py-3 rounded-2xl hover:bg-slate-50 transition-colors flex items-center justify-between">
+            <span>Mitra</span>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+          </a>
+          <a href="index.html#fitur" class="px-4 py-3 rounded-2xl hover:bg-slate-50 transition-colors flex items-center justify-between">
+            <span>Fitur</span>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+          </a>
+          <a href="index.html#harga" class="px-4 py-3 rounded-2xl hover:bg-slate-50 transition-colors flex items-center justify-between">
+            <span>Harga</span>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+          </a>
+          <a href="kontak.html" class="px-4 py-3 rounded-2xl hover:bg-slate-50 transition-colors flex items-center justify-between">
+            <span>Kontak</span>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+          </a>
+        </nav>
+      </div>
+      <div class="pt-6 border-t border-slate-100 space-y-3">
+        <button type="button" class="w-full btn-download-glow btn-open-download-modal text-white text-center py-3 rounded-full font-bold text-sm flex items-center justify-center gap-2">
+          <i class="fa-solid fa-download text-xs text-brand-sky"></i>
+          <span>Download Sekarang</span>
+        </button>
+        <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-full border border-slate-200 text-slate-700 font-semibold text-xs text-center flex items-center justify-center gap-2 hover:bg-slate-50">
+          <i class="fa-brands fa-whatsapp text-emerald-500 text-base"></i>
+          <span>WhatsApp CS 24 Jam</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main class="pt-28 sm:pt-36">
+    <!-- Hero Header -->
+    <section class="py-16 bg-gradient-to-b from-blue-50/50 via-white to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="pill-badge">Profil Perusahaan</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-deep tracking-tight max-w-4xl mx-auto">
+          Membangun Pengalaman Perjalanan Terbaik di <span class="text-brand-blue">Yogyakarta</span>
+        </h1>
+        <p class="mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          Reken hadir sebagai solusi transportasi modern yang mengutamakan kenyamanan, transparansi tarif, dan kepastian armada untuk setiap perjalanan wisata dan bisnis Anda.
+        </p>
+      </div>
+    </section>
+
+    <!-- Bento Grid Nilai & Keunggulan -->
+    <section class="py-20 bg-slate-50/60 border-t border-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="bg-white rounded-4xl p-8 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-blue-100 text-brand-blue flex items-center justify-center font-bold mb-6">
+                🚗
+              </div>
+              <h3 class="text-xl font-bold text-brand-deep mb-3">Armada Prima &amp; Terawat</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Setiap unit kendaraan menjalani inspeksi rutin mesin, pengecekan rem, pendingin kabin (AC), dan pembersihan uap higienis sebelum diserahterimakan kepada penyewa.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400 font-semibold">
+              Koleksi 42+ Mobil Plat AB Terawat
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="rounded-4xl p-8 text-white relative overflow-hidden shadow-lg flex flex-col justify-end min-h-[340px] bg-gradient-to-t from-brand-deep via-brand-navy/90 to-brand-navy/60">
+            <div class="absolute inset-0 bg-cover bg-center -z-10 opacity-30 mix-blend-overlay" style="background-image: url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="relative z-10">
+              <span class="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                Keahlian Lokal
+              </span>
+              <h3 class="text-xl font-bold mb-2">Driver Ramah &amp; Paham Rute</h3>
+              <p class="text-slate-200 text-xs sm:text-sm leading-relaxed">
+                Supir lokal berpengalaman, bertutur kata sopan khas Jogja, bebas asap rokok, serta menguasai jalur tikus saat Malioboro dan kawasan wisata padat.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white rounded-4xl p-8 border border-slate-200/80 shadow-sm flex flex-col justify-between relative overflow-hidden">
+            <div class="absolute top-0 right-0 bottom-0 w-4 bg-gradient-to-b from-brand-electric to-brand-blue"></div>
+            <div>
+              <div class="text-5xl font-black text-brand-deep tracking-tight">100%</div>
+              <h3 class="text-xl font-bold text-brand-deep mt-4 mb-2">Transparansi Tarif</h3>
+              <p class="text-slate-600 text-sm leading-relaxed pr-4">
+                Tidak ada biaya tersembunyi. Tarif sewa lepas kunci dan all-in driver sudah tertera jelas sejak awal reservasi.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 pr-4 text-xs text-emerald-600 font-semibold">
+              ✓ Garansi Tanpa Markup Saat Jemput
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Visi & Misi Wide Card -->
+        <div class="mt-8 bg-white rounded-4xl p-8 sm:p-12 border border-slate-200/80 shadow-sm">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <span class="pill-badge mb-3">Visi Kami</span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-deep tracking-tight mb-4">
+                Menjadi Mitra Perjalanan Wisata &amp; Transportasi Nomor Satu di D.I. Yogyakarta
+              </h2>
+              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                Kami berkomitmen mempermudah setiap wisatawan domestik, mancanegara, maupun pelaku bisnis saat menginjakkan kaki di Yogyakarta dengan penyediaan transportasi aman, bersih, dan tepat waktu.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-brand-deep text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                <div>
+                  <h4 class="font-bold text-sm text-brand-deep">Kemudahan Reservasi Cepat</h4>
+                  <p class="text-xs text-slate-500 mt-0.5">Verifikasi identitas tanpa ribet dan konfirmasi ketersediaan armada instan via WhatsApp.</p>
+                </div>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-brand-deep text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                <div>
+                  <h4 class="font-bold text-sm text-brand-deep">Jangkauan Antar-Jemput Fleksibel</h4>
+                  <p class="text-xs text-slate-500 mt-0.5">Layanan serah terima gratis di Bandara YIA Kulon Progo, Stasiun Tugu, Stasiun Lempuyangan, dan seluruh hotel kota Jogja.</p>
+                </div>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-brand-deep text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                <div>
+                  <h4 class="font-bold text-sm text-brand-deep">Dukungan Darurat 24 Jam</h4>
+                  <p class="text-xs text-slate-500 mt-0.5">Tim mekanik dan customer service siap sedia 24/7 memberikan penggantian unit jika terjadi kendala teknis di jalan.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Floating CTA Card -->
+    <section class="py-16 dark-ribbed relative">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-4xl sm:rounded-5xl p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl">
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-black text-brand-deep tracking-tight">
+              Siap Jelajahi Yogyakarta Bersama Reken?
+            </h2>
+            <p class="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
+              Konsultasikan kebutuhan mobil dan rencana itinerary liburan Anda dengan tim kami tanpa dipungut biaya.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href="index.html#harga" class="w-full sm:w-auto btn-capsule bg-brand-deep text-white hover:bg-brand-navy shadow-xl shadow-brand-deep/30">
+                <span>Lihat Katalog Armada</span>
+                <span class="btn-arrow-circle">
+                  <i class="fa-solid fa-arrow-right text-xs text-white"></i>
+                </span>
+              </a>
+              <a href="kontak.html" class="w-full sm:w-auto px-7 py-3 rounded-full text-sm font-semibold text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 transition-all">
+                Hubungi via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer with Giant Watermark -->
+  <footer class="bg-white border-t border-slate-200/80 pt-16 pb-12 relative overflow-hidden">
+    <div class="absolute bottom-2 left-0 right-0 flex justify-center items-center pointer-events-none select-none z-0">
+      <span class="giant-watermark tracking-tighter opacity-70">REKEN</span>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-16 border-b border-slate-100">
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3">
+            <img src="src/images/logo.png" alt="Reken Logo" class="w-9 h-9 rounded-xl object-contain">
+            <span class="text-xl font-black text-brand-deep">Reken<span class="text-brand-electric">.id</span></span>
+          </div>
+          <p class="mt-4 text-xs sm:text-sm text-slate-500 max-w-sm leading-relaxed">
+            Platform penyedia rental mobil dan jasa transportasi wisata terpercaya di Yogyakarta. Menghadirkan solusi perjalanan aman, nyaman, dan transparan.
+          </p>
+          <div class="mt-6 text-xs text-slate-500">
+            Sleman, D.I. Yogyakarta • Hotline: +62 812-3456-7890
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-brand-deep uppercase tracking-wider mb-4">Navigasi Utama</h4>
+          <ul class="space-y-2.5 text-xs text-slate-600 font-medium">
+            <li><a href="index.html" class="hover:text-brand-blue">Beranda</a></li>
+            <li><a href="tentang.html" class="text-brand-blue font-bold">Tentang Kami</a></li>
+            <li><a href="index.html#mitra" class="hover:text-brand-blue">Program Mitra</a></li>
+            <li><a href="index.html#fitur" class="hover:text-brand-blue">Fitur Pintar</a></li>
+            <li><a href="index.html#harga" class="hover:text-brand-blue">Tarif Harga</a></li>
+            <li><a href="kontak.html" class="hover:text-brand-blue">Kontak Kami</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-brand-deep uppercase tracking-wider mb-4">Layanan Populer</h4>
+          <ul class="space-y-2.5 text-xs text-slate-600 font-medium">
+            <li><a href="index.html#harga" class="hover:text-brand-blue">Sewa Lepas Kunci Jogja</a></li>
+            <li><a href="index.html#harga" class="hover:text-brand-blue">Sewa All-In Driver</a></li>
+            <li><a href="index.html#harga" class="hover:text-brand-blue">Tour Borobudur &amp; Merapi</a></li>
+            <li><a href="index.html#harga" class="hover:text-brand-blue">Shuttle Bandara YIA</a></li>
+            <li><a href="index.html#harga" class="hover:text-brand-blue">Drop Luar Kota (Solo/Semarang)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
+        <p>&copy; 2026 Reken Technologies Indonesia. Seluruh hak cipta dilindungi.</p>
+        <p>Airlume-Inspired Aesthetic • Yogyakarta</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Download App Modal -->
+  <div id="download-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md hidden items-center justify-center p-4 modal-overlay-fade">
+    <div class="bg-white rounded-4xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl border border-slate-100 modal-card-scale overflow-hidden">
+      <button id="download-modal-close" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-all z-10" aria-label="Tutup">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div class="text-center relative z-10">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-brand-pill text-brand-blue text-xs font-bold mb-3">
+          <span>REKEN MOBILE APPS &bull; YOGYAKARTA</span>
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-black text-brand-deep tracking-tight">
+          Download Aplikasi Reken
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1 max-w-sm mx-auto">
+          Nikmati kemudahan sewa mobil lepas kunci, driver wisata, dan kelola order dalam satu genggaman.
+        </p>
+      </div>
+
+      <div class="mt-6 p-1 rounded-full bg-slate-100 flex gap-1 relative z-10">
+        <button id="tab-download-customer" class="flex-1 py-2.5 rounded-full text-xs font-bold transition-all bg-brand-deep text-white shadow-sm">
+          Aplikasi Pelanggan (Penyewa)
+        </button>
+        <button id="tab-download-partner" class="flex-1 py-2.5 rounded-full text-xs font-bold transition-all text-slate-600 hover:text-slate-900">
+          Aplikasi Mitra (Driver &amp; Owner)
+        </button>
+      </div>
+
+      <div id="download-customer-content" class="mt-6 space-y-5 relative z-10">
+        <div class="p-4 rounded-3xl bg-slate-50 border border-slate-200/80 flex items-center gap-4">
+          <div class="w-20 h-20 bg-white p-2 rounded-2xl shadow-sm border border-slate-200/70 flex-shrink-0 flex items-center justify-center">
+            <svg class="w-full h-full text-slate-900" viewBox="0 0 100 100" fill="currentColor">
+              <rect width="100" height="100" fill="white"/>
+              <rect x="10" y="10" width="25" height="25" fill="#081142"/><rect x="15" y="15" width="15" height="15" fill="white"/><rect x="18" y="18" width="9" height="9" fill="#081142"/>
+              <rect x="65" y="10" width="25" height="25" fill="#081142"/><rect x="70" y="15" width="15" height="15" fill="white"/><rect x="73" y="18" width="9" height="9" fill="#081142"/>
+              <rect x="10" y="65" width="25" height="25" fill="#081142"/><rect x="15" y="70" width="15" height="15" fill="white"/><rect x="18" y="73" width="9" height="9" fill="#081142"/>
+              <rect x="42" y="42" width="16" height="16" fill="#2563EB"/><rect x="46" y="46" width="8" height="8" fill="white"/>
+            </svg>
+          </div>
+          <div class="text-left">
+            <span class="text-[11px] font-bold text-brand-electric uppercase tracking-wider">Scan Kamera HP</span>
+            <h4 class="text-sm font-bold text-brand-deep">Install Cepat Tanpa Cari</h4>
+            <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">
+              Arahkan kamera smartphone Anda ke QR code ini untuk membuka link unduhan otomatis.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" class="p-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white flex items-center gap-3 transition-transform hover:scale-[1.02]">
+            <i class="fa-brands fa-google-play text-2xl text-white flex-shrink-0"></i>
+            <div class="text-left">
+              <span class="block text-[9px] uppercase tracking-wider text-slate-400">Temukan di</span>
+              <span class="block text-xs font-bold leading-tight">Google Play</span>
+            </div>
+          </a>
+          <a href="https://apple.com/app-store" target="_blank" rel="noopener noreferrer" class="p-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white flex items-center gap-3 transition-transform hover:scale-[1.02]">
+            <i class="fa-brands fa-apple text-2xl text-white flex-shrink-0"></i>
+            <div class="text-left">
+              <span class="block text-[9px] uppercase tracking-wider text-slate-400">Unduh di</span>
+              <span class="block text-xs font-bold leading-tight">App Store</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div id="download-partner-content" class="mt-6 space-y-5 hidden relative z-10">
+        <div class="p-4 rounded-3xl bg-blue-50/70 border border-blue-100 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-brand-deep text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+            PRO
+          </div>
+          <div>
+            <span class="text-[11px] font-bold text-brand-blue uppercase tracking-wider">Reken Partner App</span>
+            <h4 class="text-sm font-bold text-brand-deep">Aplikasi Khusus Driver &amp; Mitra</h4>
+            <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+              Dapatkan notifikasi order jemputan wisatawan, navigasi rute efisien, dan pencairan saldo harian.
+            </p>
+          </div>
+        </div>
+
+        <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" class="w-full p-3.5 rounded-2xl bg-brand-deep hover:bg-brand-navy text-white flex items-center justify-center gap-3 transition-transform hover:scale-[1.01]">
+          <i class="fa-brands fa-google-play text-lg text-emerald-400"></i>
+          <span class="text-xs font-bold">Download Reken Partner (Android APK / Play Store)</span>
+        </a>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-around text-center text-[11px] text-slate-500 font-medium">
+        <span><i class="fa-solid fa-star text-amber-400 mr-1"></i>4.9 / 5.0 Rating</span>
+        <span>•</span>
+        <span><i class="fa-solid fa-shield-halved text-emerald-500 mr-1"></i>100% Data Aman</span>
+        <span>•</span>
+        <span><i class="fa-solid fa-circle-check text-brand-electric mr-1"></i>Versi Terbaru 2.4</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="src/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+/* ==========================================================================
+   REKEN - Landing Page & Company Profile
+   Custom Stylesheet (Airlume-Inspired Aesthetic)
+   ========================================================================== */
+
+/* Typography & Base Reset */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --color-brand-deep: #081142;
+  --color-brand-navy: #0D1B66;
+  --color-brand-blue: #12289E;
+  --color-brand-electric: #2563EB;
+  --color-brand-sky: #38BDF8;
+  --color-brand-pill: #EDF2FE;
+  --color-dark-bg: #050A26;
+  --color-dark-surface: #0A1340;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: #1E293B;
+  background-color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Airlume Visual Motif: Dark Ribbed / Fluted Texture
+   ========================================================================== */
+.dark-ribbed {
+  background-color: var(--color-dark-bg);
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 0px,
+      rgba(255, 255, 255, 0.035) 20px,
+      transparent 20px,
+      transparent 40px
+    ),
+    linear-gradient(
+      180deg,
+      #050A26 0%,
+      #0A1442 50%,
+      #050A26 100%
+    );
+  position: relative;
+}
+
+.dark-ribbed-hero {
+  background-color: #081142;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.04) 0px,
+      rgba(255, 255, 255, 0.04) 22px,
+      transparent 22px,
+      transparent 44px
+    ),
+    linear-gradient(
+      180deg,
+      #081142 0%,
+      #0D1B66 100%
+    );
+}
+
+/* Photo Slats / Fluted Mask (Airlume Testimonial Portrait Style) */
+.photo-slats {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-slats::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(8, 17, 66, 0.18) 0px,
+    rgba(8, 17, 66, 0.18) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ==========================================================================
+   Pill Badges & Buttons
+   ========================================================================== */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.35rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background-color: var(--color-brand-pill);
+  color: var(--color-brand-blue);
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease;
+}
+
+.pill-badge-dark {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  backdrop-filter: blur(8px);
+}
+
+.btn-capsule {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 9999px;
+  padding: 0.75rem 1.625rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px 0 rgba(18, 40, 158, 0.25);
+}
+
+.btn-capsule:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px 0 rgba(18, 40, 158, 0.35);
+}
+
+.btn-capsule:active {
+  transform: translateY(0);
+}
+
+.btn-arrow-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.btn-capsule:hover .btn-arrow-circle {
+  transform: translateX(3px);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================================================
+   Dotted Flight / Travel Trajectory Curves
+   ========================================================================== */
+.trajectory-line {
+  stroke-dasharray: 6 6;
+  animation: dashAnimation 30s linear infinite;
+}
+
+@keyframes dashAnimation {
+  to {
+    stroke-dashoffset: -300;
+  }
+}
+
+/* ==========================================================================
+   Airlume Giant Watermark Footer
+   ========================================================================== */
+.giant-watermark {
+  font-size: clamp(4.5rem, 15vw, 14rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: rgba(18, 40, 158, 0.04);
+  line-height: 0.8;
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ==========================================================================
+   Bento Grid & Card Styling
+   ========================================================================== */
+.bento-card {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(8, 17, 66, 0.08);
+}
+
+/* Sticky Navbar Backdrop Blur */
+.header-glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Glow & Accent Utilities */
+.glow-blue {
+  box-shadow: 0 0 35px -5px rgba(37, 99, 235, 0.25);
+}
+
+.glow-navy {
+  box-shadow: 0 0 45px -8px rgba(8, 17, 66, 0.3);
+}
+}
+
+/* ==========================================================================
+   Ultra-Modern Floating Island Navbar & Dynamic Header
+   ========================================================================== */
+.header-island {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 
+    0 10px 30px -10px rgba(8, 17, 66, 0.08),
+    0 1px 2px 0 rgba(8, 17, 66, 0.04),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header-island.scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(203, 213, 225, 0.95);
+  box-shadow: 
+    0 20px 45px -12px rgba(8, 17, 66, 0.14),
+    0 4px 10px -2px rgba(8, 17, 66, 0.05),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+}
+
+/* Alive Nav Links with Magnetic Pill & Luminous Indicator */
+.nav-link-item {
+  position: relative;
+  font-weight: 600;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link-item:hover {
+  color: #12289E;
+  background-color: rgba(18, 40, 158, 0.06);
+}
+
+.nav-link-item::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 18px;
+  height: 2.5px;
+  background: linear-gradient(90deg, #2563EB, #38BDF8);
+  border-radius: 9999px;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link-item:hover::after,
+.nav-link-item.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.nav-link-item.active {
+  color: #12289E !important;
+  background-color: rgba(37, 99, 235, 0.08);
+  font-weight: 700;
+}
+
+/* Shimmering Animated "Download Sekarang" Button */
+.btn-download-glow {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #081142 0%, #0D1B66 45%, #12289E 100%);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px -2px rgba(18, 40, 158, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-download-glow:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 28px -4px rgba(37, 99, 235, 0.55), inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-download-glow:active {
+  transform: translateY(0.5px) scale(0.99);
+}
+
+/* Shimmer beam passing through the button */
+.btn-download-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  animation: shimmerSweep 3.2s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmerSweep {
+  0% {
+    left: -120%;
+  }
+  30% {
+    left: 160%;
+  }
+  100% {
+    left: 160%;
+  }
+}
+
+/* Download Modal Animation */
+.modal-overlay-fade {
+  animation: modalFadeIn 0.25s ease-out forwards;
+}
+
+.modal-card-scale {
+  animation: modalScaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
