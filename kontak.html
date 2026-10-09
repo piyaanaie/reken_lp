@@ -6,12 +6,18 @@
   <title>Kontak & Lokasi Pool - Reken Rental Mobil Yogyakarta</title>
   <meta name="description" content="Hubungi Reken Jogja untuk reservasi rental mobil lepas kunci, all-in supir, paket wisata, dan shuttle YIA. Layanan konsultasi 24 jam & 3 lokasi pool di Yogyakarta.">
   
-  <link rel="icon" type="image/png" href="src/images/logo.png">
+  <!-- Favicon: Vector Glass Logo -->
+  <link rel="icon" type="image/svg+xml" href="src/images/logo.svg">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -19,86 +25,94 @@
         extend: {
           colors: {
             brand: {
-              deep: '#081142',
-              navy: '#0D1B66',
-              blue: '#12289E',
+              black: '#030712',
+              midnight: '#060D1E',
+              navy: '#0A142F',
+              surface: '#0E1A3D',
+              blue: '#1D4ED8',
               electric: '#2563EB',
               sky: '#38BDF8',
-              pill: '#EDF2FE'
-            },
-            dark: {
-              bg: '#050A26',
-              surface: '#0A1340'
+              cyan: '#22D3EE'
             }
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
-          },
-          borderRadius: {
-            '3xl': '1.5rem',
-            '4xl': '2rem',
-            '5xl': '2.5rem'
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            alt: ['"Outfit"', 'sans-serif']
           }
         }
       }
     }
   </script>
+
+  <!-- Custom Styles: Blue-Black Glassmorphism -->
   <link rel="stylesheet" href="src/style.css">
 </head>
-<body class="bg-white text-slate-800 antialiased selection:bg-brand-blue selection:text-white">
+<body class="bg-[#030712] text-slate-100 antialiased selection:bg-sky-500 selection:text-white relative overflow-x-hidden min-h-screen">
+
+  <!-- Ambient Light Orbs -->
+  <div class="ambient-glow-mesh">
+    <div class="ambient-orb-1"></div>
+    <div class="ambient-orb-2"></div>
+    <div class="ambient-orb-3"></div>
+  </div>
 
   <!-- Header Navigation -->
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 sm:py-4 px-3 sm:px-6">
-    <div id="header-island-container" class="max-w-7xl mx-auto backdrop-blur-2xl bg-white/90 border border-slate-200/90 rounded-full px-4 sm:px-6 py-2.5 sm:py-3 shadow-lg shadow-brand-deep/[0.04] flex items-center justify-between transition-all duration-300 header-island">
+    <div id="header-island-container" class="max-w-7xl mx-auto rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between transition-all duration-300 header-island">
       
-      <!-- Brand Logo using Real Image Asset (src/images/logo.png) -->
+      <!-- Brand Logo -->
       <a href="index.html" class="flex items-center gap-3 group" id="brand-logo-link">
-        <img src="src/images/logo.png" alt="Reken Logo" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl object-contain shadow-xs transition-transform duration-300 group-hover:scale-105">
+        <div class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shadow-lg shadow-sky-500/10 transition-transform duration-300 group-hover:scale-105">
+          <img src="src/images/logo.svg" alt="Reken Logo" class="w-full h-full object-contain">
+        </div>
         <div class="flex flex-col">
-          <span class="text-xl font-black text-brand-deep tracking-tight flex items-center gap-0.5">
-            Reken<span class="text-brand-electric">.id</span>
+          <span class="text-lg sm:text-xl font-bold tracking-tight text-white flex items-center gap-0.5 font-alt">
+            REKEN<span class="text-sky-400 font-extrabold">.ID</span>
           </span>
-          <span class="text-[10px] uppercase tracking-wider font-semibold text-slate-400 -mt-0.5">
-            Rental &amp; Wisata Jogja
+          <span class="text-[9px] uppercase tracking-widest font-semibold text-slate-400 -mt-0.5">
+            Mobilitas Eksekutif
           </span>
         </div>
       </a>
 
-      <!-- Desktop Nav: 5 Clean Links (No Excessive Badges or Pulses) -->
-      <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-semibold text-slate-600" id="desktop-navigation">
-        <a href="tentang.html" class="nav-link-item px-4 py-2 rounded-full hover:text-brand-blue hover:bg-slate-100/70 transition-all">
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-medium text-slate-300" id="desktop-navigation">
+        <a href="index.html#beranda" class="nav-link-item px-3.5 py-1.5 rounded-full hover:text-white transition-all">
+          Beranda
+        </a>
+        <a href="index.html#armada" class="nav-link-item px-3.5 py-1.5 rounded-full hover:text-white transition-all">
+          Armada Kami
+        </a>
+        <a href="index.html#cara-sewa" class="nav-link-item px-3.5 py-1.5 rounded-full hover:text-white transition-all">
+          Cara Sewa
+        </a>
+        <a href="index.html#keunggulan" class="nav-link-item px-3.5 py-1.5 rounded-full hover:text-white transition-all">
+          Keunggulan
+        </a>
+        <a href="index.html#wisata" class="nav-link-item px-3.5 py-1.5 rounded-full hover:text-white transition-all">
+          Wisata Jogja
+        </a>
+        <a href="tentang.html" class="nav-link-item px-3.5 py-1.5 rounded-full hover:text-white transition-all">
           Tentang Kami
         </a>
-        <a href="index.html#mitra" class="nav-link-item px-4 py-2 rounded-full hover:text-brand-blue hover:bg-slate-100/70 transition-all">
-          Mitra
-        </a>
-        <a href="index.html#fitur" class="nav-link-item px-4 py-2 rounded-full hover:text-brand-blue hover:bg-slate-100/70 transition-all">
-          Fitur
-        </a>
-        <a href="index.html#harga" class="nav-link-item px-4 py-2 rounded-full hover:text-brand-blue hover:bg-slate-100/70 transition-all">
-          Harga
-        </a>
-        <a href="kontak.html" class="nav-link-item active text-brand-blue px-4 py-2 rounded-full hover:bg-slate-100/70 transition-all">
+        <a href="kontak.html" class="nav-link-item active text-white px-3.5 py-1.5 rounded-full transition-all">
           Kontak
         </a>
       </nav>
 
-      <!-- CTA Button: Download Sekarang with Icon Library -->
+      <!-- Right Action CTA -->
       <div class="hidden sm:flex items-center gap-3">
-        <button type="button" class="btn-download-glow btn-open-download-modal text-white text-xs sm:text-sm font-bold px-6 py-2.5 rounded-full flex items-center gap-2.5 shadow-md shadow-brand-blue/30" id="nav-cta-download">
-          <i class="fa-solid fa-download text-sm text-brand-sky"></i>
-          <span>Download Sekarang</span>
-        </button>
+        <a href="https://wa.me/6281234567890?text=Halo%20Reken,%20saya%20mau%20tanya%20rental%20mobil%20Jogja" target="_blank" rel="noopener noreferrer" class="btn-glass-pill-outline">
+          <span>Chat WhatsApp</span>
+          <i class="fa-solid fa-arrow-right text-xs text-sky-400"></i>
+        </a>
       </div>
 
       <!-- Mobile Button -->
       <div class="flex lg:hidden items-center gap-2">
-        <button type="button" class="btn-open-download-modal sm:hidden px-3.5 py-1.5 rounded-full bg-brand-deep text-white text-xs font-bold flex items-center gap-1.5 shadow-sm">
-          <i class="fa-solid fa-mobile-screen-button text-xs text-brand-sky"></i>
-          <span>App</span>
-        </button>
-        <button id="mobile-menu-toggle" type="button" class="p-2 rounded-full text-slate-700 hover:bg-slate-100" aria-label="Toggle Menu">
-          <i class="fa-solid fa-bars text-lg text-slate-700"></i>
+        <button id="mobile-menu-toggle" type="button" class="p-2 rounded-full text-slate-300 hover:text-white hover:bg-white/5 focus:outline-none" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars text-lg"></i>
         </button>
       </div>
 
@@ -106,542 +120,245 @@
   </header>
 
   <!-- Mobile Drawer -->
-  <div id="mobile-menu-drawer" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden">
-    <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
+  <div id="mobile-menu-drawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden transition-all">
+    <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-[#070F26] border-l border-white/10 shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
       <div>
-        <div class="flex items-center justify-between pb-6 border-b border-slate-100">
+        <div class="flex items-center justify-between pb-5 border-b border-white/10">
           <div class="flex items-center gap-2.5">
-            <img src="src/images/logo.png" alt="Reken Logo" class="w-8 h-8 rounded-lg object-contain">
-            <span class="font-bold text-lg text-brand-deep">Reken<span class="text-brand-electric">.id</span></span>
+            <img src="src/images/logo.svg" alt="Reken Logo" class="w-8 h-8 rounded-lg object-contain">
+            <span class="font-bold text-lg text-white font-alt">REKEN<span class="text-sky-400">.ID</span></span>
           </div>
-          <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-slate-600" aria-label="Tutup Menu">
-            <i class="fa-solid fa-xmark text-lg text-slate-500"></i>
+          <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-white" aria-label="Tutup Menu">
+            <i class="fa-solid fa-xmark text-lg"></i>
           </button>
         </div>
-        <nav class="mt-6 flex flex-col gap-2 text-sm font-semibold text-slate-700">
-          <a href="tentang.html" class="px-4 py-3 rounded-2xl hover:bg-slate-50 transition-colors flex items-center justify-between">
-            <span>Tentang Kami</span>
-            <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
-          </a>
-          <a href="index.html#mitra" class="px-4 py-3 rounded-2xl hover:bg-slate-50 transition-colors flex items-center justify-between">
-            <span>Mitra</span>
-            <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
-          </a>
-          <a href="index.html#fitur" class="px-4 py-3 rounded-2xl hover:bg-slate-50 transition-colors flex items-center justify-between">
-            <span>Fitur</span>
-            <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
-          </a>
-          <a href="index.html#harga" class="px-4 py-3 rounded-2xl hover:bg-slate-50 transition-colors flex items-center justify-between">
-            <span>Harga</span>
-            <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
-          </a>
-          <a href="kontak.html" class="px-4 py-3 rounded-2xl text-brand-blue bg-blue-50/70 font-semibold flex items-center justify-between">
-            <span>Kontak</span>
-            <i class="fa-solid fa-chevron-right text-xs text-brand-blue"></i>
-          </a>
+        <nav class="mt-6 flex flex-col gap-1.5 text-sm font-medium text-slate-300">
+          <a href="index.html#beranda" class="px-4 py-3 rounded-xl hover:bg-white/5 hover:text-white transition-colors">Beranda</a>
+          <a href="index.html#armada" class="px-4 py-3 rounded-xl hover:bg-white/5 hover:text-white transition-colors">Armada Kami</a>
+          <a href="tentang.html" class="px-4 py-3 rounded-xl hover:bg-white/5 hover:text-white transition-colors">Tentang Kami</a>
+          <a href="kontak.html" class="px-4 py-3 rounded-xl bg-sky-500/10 text-sky-300 border border-sky-400/20">Kontak</a>
         </nav>
       </div>
-      <div class="pt-6 border-t border-slate-100 space-y-3">
-        <button type="button" class="w-full btn-download-glow btn-open-download-modal text-white text-center py-3 rounded-full font-bold text-sm flex items-center justify-center gap-2">
-          <i class="fa-solid fa-download text-sm text-brand-sky"></i>
-          <span>Download Sekarang</span>
-        </button>
-        <a href="https://wa.me/6281234567890?text=Halo%20Reken,%20saya%20ingin%20tanya%20rental%20mobil%20Jogja" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-full border border-slate-200 text-slate-700 font-semibold text-xs text-center flex items-center justify-center gap-2 hover:bg-slate-50">
-          <i class="fa-brands fa-whatsapp text-emerald-600 text-base"></i>
-          <span>Chat WhatsApp CS</span>
-          <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+      <div class="pt-6 border-t border-white/10">
+        <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-full bg-gradient-to-r from-sky-400 to-blue-600 text-white font-bold text-xs text-center flex items-center justify-center gap-2 shadow-lg shadow-sky-500/25">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>Konsultasi WhatsApp</span>
         </a>
       </div>
     </div>
   </div>
 
-  <main class="pt-28 sm:pt-36">
+  <main class="relative z-10 pt-28 sm:pt-36 pb-20">
+    
     <!-- Hero Header -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pb-14">
-      <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-brand-pill text-brand-blue text-xs font-semibold mb-6">
-        LAYANAN PELANGGAN AKTIF 24/7 &bull; YOGYAKARTA
-      </div>
-      <h1 class="text-3xl sm:text-5xl font-black text-brand-deep tracking-tight max-w-3xl mx-auto leading-tight">
-        Hubungi Reken Kapan Saja, Kami Siap Mengantar Perjalanan Anda
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
+      <div class="editorial-tag justify-center mb-3 font-alt">LAYANAN 24/7 NONSTOP</div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-medium text-white tracking-tight max-w-4xl mx-auto leading-tight">
+        Hubungi Konsultan Kami, <br>
+        <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-200 to-white">
+          Siap Mengantar Perjalanan Anda
+        </span>
       </h1>
-      <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        Butuh kendaraan mendadak di Bandara YIA? Ingin konsultasi rute wisata keluarga di Jogja? Tim representatif Reken selalu siap mendampingi kebutuhan mobilitas Anda.
+      <p class="mt-5 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Butuh kendaraan mendadak saat mendarat di Bandara YIA? Ingin merancang itinerary wisata keluarga di Jogja? Tim representatif Reken selalu siap mendampingi kebutuhan Anda.
       </p>
     </section>
 
-    <!-- Contact Info Cards -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <!-- 4 Contact Method Cards -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Card 1: WhatsApp -->
-        <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-brand-blue/30 hover:shadow-lg transition-all group">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform text-2xl">
-            <i class="fa-brands fa-whatsapp"></i>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/6281234567890?text=Halo%20Reken,%20saya%20mau%20tanya%20rental%20mobil" target="_blank" rel="noopener noreferrer" class="glass-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 text-emerald-400 flex items-center justify-center text-xl mb-5 group-hover:scale-105 transition-transform">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white font-alt mb-1">WhatsApp CS 24 Jam</h3>
+            <p class="text-xs text-slate-400 mb-4">Respons rata-rata dalam 1-2 menit untuk reservasi &amp; konsultasi cepat.</p>
           </div>
-          <span class="text-xs uppercase font-bold tracking-wider text-slate-400">WhatsApp Hotline</span>
-          <h3 class="text-lg font-bold text-brand-deep mt-1">+62 812-3456-7890</h3>
-          <p class="text-xs text-slate-500 mt-2 leading-relaxed">Respon instan dalam hitungan menit untuk booking armada dan tanya ketersediaan unit.</p>
-          <a href="https://wa.me/6281234567890?text=Halo%20Reken,%20saya%20mau%20sewa%20mobil" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700">
-            <span>Kirim Pesan WhatsApp</span>
-            <i class="fa-solid fa-arrow-right text-xs"></i>
-          </a>
-        </div>
+          <span class="text-xs font-bold text-emerald-400 flex items-center gap-1 group-hover:underline">
+            <span>+62 812-3456-7890</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </span>
+        </a>
 
-        <!-- Card 2: Telepon Kantor -->
-        <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-brand-blue/30 hover:shadow-lg transition-all group">
-          <div class="w-12 h-12 rounded-2xl bg-brand-blue/10 text-brand-blue flex items-center justify-center mb-5 group-hover:scale-105 transition-transform text-xl">
-            <i class="fa-solid fa-phone"></i>
+        <!-- Telepon Kantor -->
+        <a href="tel:+62274123456" class="glass-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-sky-500/20 border border-sky-400/30 text-sky-400 flex items-center justify-center text-xl mb-5 group-hover:scale-105 transition-transform">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white font-alt mb-1">Telepon Kantor</h3>
+            <p class="text-xs text-slate-400 mb-4">Layanan sambungan langsung untuk urusan dinas dan korporat.</p>
           </div>
-          <span class="text-xs uppercase font-bold tracking-wider text-slate-400">Telepon Kantor</span>
-          <h3 class="text-lg font-bold text-brand-deep mt-1">(0274) 8899-7700</h3>
-          <p class="text-xs text-slate-500 mt-2 leading-relaxed">Layanan telepon untuk kerjasama korporat, B2B, event organizer, dan instansi kedinasan.</p>
-          <a href="tel:027488997700" class="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-brand-blue hover:text-brand-electric">
-            <span>Hubungi Telepon Kantor</span>
-            <i class="fa-solid fa-arrow-right text-xs"></i>
-          </a>
-        </div>
+          <span class="text-xs font-bold text-sky-300 flex items-center gap-1 group-hover:underline">
+            <span>(0274) 123-456</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </span>
+        </a>
 
-        <!-- Card 3: Email Resmi -->
-        <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-brand-blue/30 hover:shadow-lg transition-all group">
-          <div class="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-600 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform text-xl">
-            <i class="fa-solid fa-envelope"></i>
+        <!-- Email Resmi -->
+        <a href="mailto:info@reken.id" class="glass-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-500/20 border border-blue-400/30 text-blue-400 flex items-center justify-center text-xl mb-5 group-hover:scale-105 transition-transform">
+              <i class="fa-regular fa-envelope"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white font-alt mb-1">Email Resmi</h3>
+            <p class="text-xs text-slate-400 mb-4">Penawaran tender perusahaan, kerjasama agen, dan faktur pajak.</p>
           </div>
-          <span class="text-xs uppercase font-bold tracking-wider text-slate-400">Email Korespondensi</span>
-          <h3 class="text-lg font-bold text-brand-deep mt-1">booking@reken.id</h3>
-          <p class="text-xs text-slate-500 mt-2 leading-relaxed">Kirim penawaran resmi, invoice request, atau surat kerjasama institusi Anda.</p>
-          <a href="mailto:booking@reken.id" class="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-sky-600 hover:text-sky-700">
-            <span>Kirimkan Email</span>
-            <i class="fa-solid fa-arrow-right text-xs"></i>
-          </a>
-        </div>
+          <span class="text-xs font-bold text-blue-300 flex items-center gap-1 group-hover:underline">
+            <span>info@reken.id</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </span>
+        </a>
 
-        <!-- Card 4: Jam Operasional -->
-        <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-brand-blue/30 hover:shadow-lg transition-all group">
-          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform text-xl">
-            <i class="fa-solid fa-clock"></i>
+        <!-- Titik Pool -->
+        <div class="glass-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-400/30 text-amber-400 flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-warehouse"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white font-alt mb-1">3 Pool Armada Jogja</h3>
+            <p class="text-xs text-slate-400 mb-4">Pool Gejayan, Pool Ringroad Utara, dan Pool Shuttle Bandara YIA.</p>
           </div>
-          <span class="text-xs uppercase font-bold tracking-wider text-slate-400">Jam Operasional</span>
-          <h3 class="text-lg font-bold text-brand-deep mt-1">24 Jam Standby</h3>
-          <p class="text-xs text-slate-500 mt-2 leading-relaxed">Pengantaran armada ke hotel / stasiun / bandara melayani shift pagi hingga dini hari sesuai kesepakatan.</p>
-          <span class="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-amber-600">
-            Selalu Siap Setiap Hari &bull; Termasuk Hari Libur
+          <span class="text-xs font-bold text-amber-300 flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span>Standby 24 Jam</span>
           </span>
         </div>
 
       </div>
     </section>
 
-    <!-- Main Section: Form & Pool Locations -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-        
-        <!-- Left: Interactive Form (7 Cols) -->
-        <div class="lg:col-span-7 bg-white rounded-4xl border border-slate-200/80 p-8 sm:p-10 shadow-xl shadow-slate-100">
-          <div class="border-b border-slate-100 pb-6 mb-8">
-            <span class="text-xs font-bold uppercase tracking-wider text-brand-blue">Formulir Permintaan Sewa</span>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-deep mt-1">Kirim Rincian Sewa Mobil</h2>
-            <p class="text-sm text-slate-500 mt-2">Isi form berikut untuk langsung terhubung dengan sistem WhatsApp CS kami dengan format teratur.</p>
-          </div>
-
-          <form id="contact-booking-form" class="space-y-6">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Nama Lengkap *</label>
-                <input type="text" id="form-name" required placeholder="Contoh: Dimas Aditya" class="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand-blue focus:bg-white transition-all">
-              </div>
-              <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Nomor WhatsApp Aktif *</label>
-                <input type="tel" id="form-phone" required placeholder="Contoh: 081234567890" class="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand-blue focus:bg-white transition-all">
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Jenis Layanan *</label>
-                <select id="form-service" class="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand-blue focus:bg-white transition-all">
-                  <option value="Sewa Lepas Kunci (Self-Drive)">Sewa Lepas Kunci (Self-Drive)</option>
-                  <option value="Sewa All-In Supir + BBM">Sewa All-In Supir + BBM</option>
-                  <option value="Paket Wisata Yogyakarta">Paket Wisata Yogyakarta</option>
-                  <option value="Antar-Jemput Bandara YIA">Antar-Jemput Bandara YIA</option>
-                  <option value="Drop Luar Kota (Solo/Semarang/dll)">Drop Luar Kota (Solo/Semarang/dll)</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Pilihan Kendaraan *</label>
-                <select id="form-vehicle" class="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand-blue focus:bg-white transition-all">
-                  <option value="Honda Brio E / RS">Honda Brio E / RS (Mulai 300rb)</option>
-                  <option value="Toyota All New Avanza">Toyota All New Avanza (Mulai 350rb)</option>
-                  <option value="Mitsubishi Xpander">Mitsubishi Xpander (Mulai 450rb)</option>
-                  <option value="Innova Zenix Hybrid">Innova Zenix Hybrid (Mulai 800rb)</option>
-                  <option value="Toyota Fortuner GR Sport">Toyota Fortuner GR Sport (Mulai 1,3jt)</option>
-                  <option value="Toyota HiAce Premio">Toyota HiAce Premio (Mulai 1,4jt)</option>
-                  <option value="Lainnya / Butuh Rekomendasi">Lainnya / Butuh Rekomendasi</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Tanggal Mulai Sewa *</label>
-                <input type="date" id="form-date" required class="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand-blue focus:bg-white transition-all">
-              </div>
-              <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Durasi Sewa *</label>
-                <select id="form-duration" class="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand-blue focus:bg-white transition-all">
-                  <option value="1 Hari (12 / 24 Jam)">1 Hari (12 / 24 Jam)</option>
-                  <option value="2 Hari">2 Hari</option>
-                  <option value="3 Hari (Populer Liburan)">3 Hari (Populer Liburan)</option>
-                  <option value="4 - 7 Hari (Mingguan)">4 - 7 Hari (Mingguan)</option>
-                  <option value="Lebih dari 1 Minggu">Lebih dari 1 Minggu</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Lokasi Pengantaran / Catatan Perjalanan</label>
-              <textarea id="form-notes" rows="3" placeholder="Contoh: Pengantaran ke Stasiun Tugu jam 08.00 pagi. Rencana jalan-jalan ke Borobudur dan Pantai Gunungkidul." class="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand-blue focus:bg-white transition-all"></textarea>
-            </div>
-
-            <button type="submit" class="w-full py-4 rounded-full bg-brand-deep hover:bg-brand-navy text-white font-bold text-sm flex items-center justify-center gap-3 shadow-xl shadow-brand-deep/20 transition-all">
-              <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
-              <span>Kirim Permintaan ke WhatsApp Reken</span>
-            </button>
-            <p class="text-center text-xs text-slate-400">Data Anda aman dan hanya digunakan untuk keperluan konfirmasi pesanan sewa.</p>
-          </form>
-        </div>
-
-        <!-- Right: 3 Pool Locations & Benefits (5 Cols) -->
-        <div class="lg:col-span-5 space-y-6">
+    <!-- Interactive Form & Map Container -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+      <div class="editorial-container-frame p-6 sm:p-12 relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
-          <div class="p-8 rounded-4xl bg-slate-50 border border-slate-200/80">
-            <span class="text-xs font-bold uppercase tracking-wider text-brand-blue">Jaringan Lokasi Pool Jogja</span>
-            <h3 class="text-xl font-black text-brand-deep mt-1 mb-6">3 Titik Distribusi Armada Reken</h3>
-
-            <div class="space-y-6">
-              <!-- Pool 1 -->
-              <div class="flex gap-4">
-                <div class="w-10 h-10 rounded-2xl bg-brand-deep text-white flex-shrink-0 flex items-center justify-center font-bold text-sm">
-                  01
-                </div>
-                <div>
-                  <h4 class="text-sm font-bold text-brand-deep">Kantor Pusat &amp; Pool Utama Sleman</h4>
-                  <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-                    Jl. Ringroad Utara No. 88, Mlati, Sleman, D.I. Yogyakarta (Akses cepat ke Monjali, Kampus UGM, dan Jombor).
-                  </p>
-                  <span class="inline-block mt-2 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full">
-                    Pool Terlengkap &bull; 40+ Unit Siap Jalan
-                  </span>
-                </div>
-              </div>
-
-              <!-- Pool 2 -->
-              <div class="flex gap-4">
-                <div class="w-10 h-10 rounded-2xl bg-brand-deep text-white flex-shrink-0 flex items-center justify-center font-bold text-sm">
-                  02
-                </div>
-                <div>
-                  <h4 class="text-sm font-bold text-brand-deep">Pool Timur - Maguwoharjo &amp; Bandara Adisucipto</h4>
-                  <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-                    Jl. Raya Solo - Yogyakarta KM 10, Kalasan (Dekat Stasiun Maguwo, Candi Prambanan, dan akses tol Solo-Jogja).
-                  </p>
-                  <span class="inline-block mt-2 text-[11px] font-semibold text-brand-blue bg-blue-50 px-2.5 py-0.5 rounded-full">
-                    Akses Cepat Jalur Luar Kota Solo
-                  </span>
-                </div>
-              </div>
-
-              <!-- Pool 3 -->
-              <div class="flex gap-4">
-                <div class="w-10 h-10 rounded-2xl bg-brand-deep text-white flex-shrink-0 flex items-center justify-center font-bold text-sm">
-                  03
-                </div>
-                <div>
-                  <h4 class="text-sm font-bold text-brand-deep">Hub Transit Bandara YIA (Kulon Progo)</h4>
-                  <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-                    Kawasan Strategis Bandara Internasional Yogyakarta, Temon, Kulon Progo (Siap handover saat landing pesawat).
-                  </p>
-                  <span class="inline-block mt-2 text-[11px] font-semibold text-sky-600 bg-sky-50 px-2.5 py-0.5 rounded-full">
-                    Layanan Pick-up / Drop Bandara YIA
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Free Delivery Info Box -->
-          <div class="p-6 rounded-3xl bg-blue-50/70 border border-blue-100 flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl bg-brand-blue text-white flex items-center justify-center flex-shrink-0">
-              <i class="fa-solid fa-truck-fast text-white"></i>
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-brand-deep">Gratis Pengantaran &amp; Pengambilan Unit</h4>
-              <p class="text-xs text-slate-600 mt-1 leading-relaxed">
-                Khusus wilayah Kota Yogyakarta, Stasiun Tugu, Stasiun Lempuyangan, dan hotel di area ringroad tanpa biaya tambahan untuk sewa minimal 2 hari.
-              </p>
-            </div>
-          </div>
-
-          <!-- Customer Testimonial Quick Quote -->
-          <div class="p-6 rounded-3xl bg-slate-900 text-white relative overflow-hidden">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="text-amber-400 text-xs flex gap-0.5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
-              <span class="text-xs font-bold text-slate-300">5.0 / 5.0 Google Reviews</span>
-            </div>
-            <p class="text-xs text-slate-300 italic leading-relaxed">
-              "Pelayanan CS Reken sangat responsif di WA. Begitu mendarat di YIA, mobil Innova Zenix sudah siap dan bersih wangi. Drivernya juga sangat ramah dan paham jalur wisata tersembunyi Jogja!"
-            </p>
-            <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-              <span class="font-semibold text-white">dr. Arya Dananjaya</span>
-              <span>Wisatawan Jakarta</span>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Floating CTA Card -->
-    <section class="py-16 dark-ribbed relative">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-4xl sm:rounded-5xl p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl">
-          <div class="relative z-10 max-w-2xl mx-auto">
-            <h2 class="text-3xl sm:text-4xl font-black text-brand-deep tracking-tight">
-              Siap Jelajahi Yogyakarta Bersama Reken?
+          <!-- Contact Form -->
+          <div class="lg:col-span-7">
+            <div class="editorial-tag mb-2 font-alt">FORMULIR PERMINTAAN</div>
+            <h2 class="text-2xl sm:text-3xl font-display font-medium text-white tracking-tight mb-4">
+              Kirimkan Rencana Perjalanan Anda
             </h2>
-            <p class="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-              Dapatkan mobil impian dengan kondisi prima, harga transparan, dan jaminan tanpa biaya siluman.
+            <p class="text-slate-400 text-xs sm:text-sm mb-6">
+              Isi data perjalanan Anda, tim konsultan kami akan menghubungi balik dalam waktu kurang dari 15 menit dengan proposal tarif terbaik.
             </p>
-            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="index.html#harga" class="w-full sm:w-auto btn-capsule bg-brand-deep text-white hover:bg-brand-navy shadow-xl shadow-brand-deep/30">
-                <span>Pilih Armada Mobil</span>
-                <span class="btn-arrow-circle">
-                  <i class="fa-solid fa-arrow-right text-xs text-white"></i>
-                </span>
-              </a>
-              <a href="https://wa.me/6281234567890?text=Halo%20Reken,%20saya%20mau%20konsultasi%20sewa%20mobil" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3 rounded-full text-sm font-semibold text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
-                <i class="fa-brands fa-whatsapp text-emerald-600 text-base"></i>
-                <span>Hubungi via WhatsApp</span>
-              </a>
+
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah diterima, kami akan segera menghubungi WhatsApp Anda.');">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Nama Lengkap</label>
+                  <input type="text" required placeholder="Contoh: Budi Prakoso" class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-white/10 text-xs font-medium text-white focus:outline-none focus:border-sky-400">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Nomor WhatsApp Aktif</label>
+                  <input type="tel" required placeholder="Contoh: 081234567890" class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-white/10 text-xs font-medium text-white focus:outline-none focus:border-sky-400">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Pilihan Armada</label>
+                  <select class="w-full px-3 py-2.5 rounded-xl bg-black/40 border border-white/10 text-xs font-medium text-white focus:outline-none focus:border-sky-400">
+                    <option>Innova Zenix Hybrid</option>
+                    <option>Toyota Alphard VIP</option>
+                    <option>All New Veloz Matic</option>
+                    <option>Toyota HiAce Premio Luxury</option>
+                    <option>Lainnya / Rekomendasikan</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Tanggal Perjalanan</label>
+                  <input type="date" class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-white/10 text-xs font-medium text-white focus:outline-none focus:border-sky-400">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Catatan Khusus / Rute Tujuan</label>
+                <textarea rows="3" placeholder="Tuliskan titik penjemputan (contoh: Bandara YIA / Stasiun Tugu) dan rencana rute..." class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-white/10 text-xs font-medium text-white focus:outline-none focus:border-sky-400"></textarea>
+              </div>
+
+              <button type="submit" class="w-full sm:w-auto px-8 py-3 rounded-full bg-gradient-to-r from-sky-400 to-blue-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-sky-500/25 hover:opacity-95 transition-all">
+                Kirim Permintaan Reservasi
+              </button>
+            </form>
+          </div>
+
+          <!-- Pool Locations Map Card -->
+          <div class="lg:col-span-5">
+            <div class="rounded-3xl p-6 bg-gradient-to-br from-[#0B1736] to-[#04091A] border border-sky-400/20 shadow-2xl">
+              <h3 class="text-base font-bold text-white mb-4 font-alt flex items-center gap-2">
+                <i class="fa-solid fa-map-location-dot text-sky-400"></i>
+                <span>Titik Pool &amp; Penjemputan Cepat</span>
+              </h3>
+
+              <div class="space-y-4 text-xs">
+                <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-bold text-white">Pool 1: Ringroad Utara (Pusat)</span>
+                    <span class="text-[10px] text-emerald-400">24 Jam</span>
+                  </div>
+                  <p class="text-slate-400 text-[11px]">Jl. Ringroad Utara, Sleman (Dekat Hartono Mall / Polda DIY)</p>
+                </div>
+
+                <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-bold text-white">Pool 2: Gejayan - Affandi</span>
+                    <span class="text-[10px] text-sky-400">Siap Jalan</span>
+                  </div>
+                  <p class="text-slate-400 text-[11px]">Jl. Affandi No. 42, Sleman (Dekat Kawasan Kampus &amp; Hotel)</p>
+                </div>
+
+                <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-bold text-white">Pool 3: Shuttle Bandara YIA</span>
+                    <span class="text-[10px] text-amber-400">Direct Meet</span>
+                  </div>
+                  <p class="text-slate-400 text-[11px]">Area Parkir Gedung B, Bandara Internasional Yogyakarta</p>
+                </div>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-white/10 text-center">
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-glass-pill-outline text-xs inline-flex">
+                  <i class="fa-solid fa-location-arrow text-sky-400"></i>
+                  <span>Buka Petunjuk Arah di Google Maps</span>
+                </a>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer with Giant Watermark -->
-  <footer class="bg-white border-t border-slate-200/80 pt-16 pb-12 relative overflow-hidden">
-    <div class="absolute bottom-2 left-0 right-0 flex justify-center items-center pointer-events-none select-none z-0">
-      <span class="giant-watermark tracking-tighter opacity-70">REKEN</span>
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-white/10 bg-[#02050E] pt-16 pb-12 overflow-hidden">
+    <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 giant-watermark text-center pointer-events-none opacity-20">
+      REKEN
     </div>
-
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-16 border-b border-slate-100">
-        <div class="lg:col-span-2">
-          <div class="flex items-center gap-3">
-            <img src="src/images/logo.png" alt="Reken Logo" class="w-9 h-9 rounded-xl object-contain">
-            <span class="text-xl font-black text-brand-deep">Reken<span class="text-brand-electric">.id</span></span>
-          </div>
-          <p class="mt-4 text-xs sm:text-sm text-slate-500 max-w-sm leading-relaxed">
-            Platform penyedia rental mobil dan jasa transportasi wisata terpercaya di Yogyakarta. Menghadirkan solusi perjalanan aman, nyaman, dan transparan.
-          </p>
-          <div class="mt-6 text-xs text-slate-500">
-            Sleman, D.I. Yogyakarta &bull; Hotline: +62 812-3456-7890
-          </div>
-        </div>
-
-        <div>
-          <h4 class="text-xs font-bold text-brand-deep uppercase tracking-wider mb-4">Navigasi Utama</h4>
-          <ul class="space-y-2.5 text-xs text-slate-600 font-medium">
-            <li><a href="index.html" class="hover:text-brand-blue">Beranda</a></li>
-            <li><a href="tentang.html" class="hover:text-brand-blue">Tentang Kami</a></li>
-            <li><a href="index.html#mitra" class="hover:text-brand-blue">Program Mitra</a></li>
-            <li><a href="index.html#fitur" class="hover:text-brand-blue">Fitur Pintar</a></li>
-            <li><a href="index.html#harga" class="hover:text-brand-blue">Tarif Harga</a></li>
-            <li><a href="kontak.html" class="text-brand-blue font-bold">Kontak</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xs font-bold text-brand-deep uppercase tracking-wider mb-4">Layanan Populer</h4>
-          <ul class="space-y-2.5 text-xs text-slate-600 font-medium">
-            <li><a href="index.html#harga" class="hover:text-brand-blue">Sewa Lepas Kunci Jogja</a></li>
-            <li><a href="index.html#harga" class="hover:text-brand-blue">Sewa All-In Supir</a></li>
-            <li><a href="index.html#harga" class="hover:text-brand-blue">Tour Borobudur &amp; Merapi</a></li>
-            <li><a href="index.html#harga" class="hover:text-brand-blue">Shuttle Bandara YIA</a></li>
-            <li><a href="index.html#harga" class="hover:text-brand-blue">Drop Luar Kota (Solo/Semarang)</a></li>
-          </ul>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="src/images/logo.svg" alt="Reken Logo" class="w-9 h-9 rounded-xl object-contain">
+          <span class="text-xl font-bold text-white font-alt">REKEN<span class="text-sky-400">.ID</span></span>
+        </a>
+        <div class="flex items-center gap-6 text-xs text-slate-400">
+          <a href="index.html" class="hover:text-white">Beranda</a>
+          <a href="tentang.html" class="hover:text-white">Tentang Kami</a>
+          <a href="kontak.html" class="text-white">Kontak &amp; Pool</a>
         </div>
       </div>
-
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
-        <p>&copy; 2026 Reken Technologies Indonesia. Seluruh hak cipta dilindungi.</p>
-        <p>Airlume-Inspired Aesthetic &bull; Yogyakarta</p>
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-3">
+        <p>&copy; 2026 PT Reken Transport Indonesia. Seluruh hak cipta dilindungi.</p>
+        <p>Jl. Ringroad Utara, Sleman, Yogyakarta</p>
       </div>
     </div>
   </footer>
 
-  <!-- ========================================================================
-       INTERACTIVE DOWNLOAD APP MODAL (Customer & Partner Apps)
-       ======================================================================== -->
-  <div id="download-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md hidden items-center justify-center p-4 modal-overlay-fade">
-    <div class="bg-white rounded-4xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl border border-slate-100 modal-card-scale overflow-hidden">
-      
-      <!-- Ambient Glow Behind Modal -->
-      <div class="absolute -top-16 -right-16 w-48 h-48 bg-blue-100/70 rounded-full blur-2xl pointer-events-none"></div>
-      <div class="absolute -bottom-16 -left-16 w-48 h-48 bg-sky-100/70 rounded-full blur-2xl pointer-events-none"></div>
-
-      <!-- Close Button -->
-      <button id="download-modal-close" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-all z-10" aria-label="Tutup">
-        <i class="fa-solid fa-xmark text-lg"></i>
-      </button>
-
-      <!-- Modal Header -->
-      <div class="text-center relative z-10">
-        <div class="inline-flex items-center px-3 py-1 rounded-full bg-brand-pill text-brand-blue text-xs font-bold mb-3">
-          <span>REKEN MOBILE APPS &bull; YOGYAKARTA</span>
-        </div>
-        <h3 class="text-2xl sm:text-3xl font-black text-brand-deep tracking-tight">
-          Download Aplikasi Reken
-        </h3>
-        <p class="text-xs sm:text-sm text-slate-500 mt-1 max-w-sm mx-auto">
-          Nikmati kemudahan sewa mobil lepas kunci, driver wisata, dan kelola order dalam satu genggaman.
-        </p>
-      </div>
-
-      <!-- Tab Switcher: Pelanggan vs Mitra -->
-      <div class="mt-6 p-1 rounded-full bg-slate-100 flex gap-1 relative z-10">
-        <button id="tab-download-customer" class="flex-1 py-2.5 rounded-full text-xs font-bold transition-all bg-brand-deep text-white shadow-sm">
-          Aplikasi Pelanggan (Penyewa)
-        </button>
-        <button id="tab-download-partner" class="flex-1 py-2.5 rounded-full text-xs font-bold transition-all text-slate-600 hover:text-slate-900">
-          Aplikasi Mitra (Driver &amp; Owner)
-        </button>
-      </div>
-
-      <!-- Content 1: Customer App -->
-      <div id="download-customer-content" class="mt-6 space-y-5 relative z-10">
-        <div class="p-4 rounded-3xl bg-slate-50 border border-slate-200/80 flex items-center gap-4">
-          <div class="w-20 h-20 bg-white p-2 rounded-2xl shadow-sm border border-slate-200/70 flex-shrink-0 flex items-center justify-center">
-            <!-- Simulated Crisp SVG QR Code -->
-            <svg class="w-full h-full text-slate-900" viewBox="0 0 100 100" fill="currentColor">
-              <rect width="100" height="100" fill="white"/>
-              <rect x="10" y="10" width="25" height="25" fill="#081142"/>
-              <rect x="15" y="15" width="15" height="15" fill="white"/>
-              <rect x="18" y="18" width="9" height="9" fill="#081142"/>
-              <rect x="65" y="10" width="25" height="25" fill="#081142"/>
-              <rect x="70" y="15" width="15" height="15" fill="white"/>
-              <rect x="73" y="18" width="9" height="9" fill="#081142"/>
-              <rect x="10" y="65" width="25" height="25" fill="#081142"/>
-              <rect x="15" y="70" width="15" height="15" fill="white"/>
-              <rect x="18" y="73" width="9" height="9" fill="#081142"/>
-              <rect x="42" y="12" width="6" height="6" fill="#081142"/>
-              <rect x="52" y="12" width="6" height="6" fill="#081142"/>
-              <rect x="42" y="24" width="6" height="6" fill="#081142"/>
-              <rect x="52" y="24" width="6" height="6" fill="#081142"/>
-              <rect x="42" y="42" width="16" height="16" fill="#2563EB"/>
-              <rect x="46" y="46" width="8" height="8" fill="white"/>
-              <rect x="12" y="42" width="6" height="6" fill="#081142"/>
-              <rect x="24" y="42" width="6" height="6" fill="#081142"/>
-              <rect x="68" y="42" width="6" height="6" fill="#081142"/>
-              <rect x="80" y="42" width="6" height="6" fill="#081142"/>
-              <rect x="42" y="68" width="6" height="6" fill="#081142"/>
-              <rect x="52" y="68" width="6" height="6" fill="#081142"/>
-              <rect x="42" y="80" width="6" height="6" fill="#081142"/>
-              <rect x="52" y="80" width="6" height="6" fill="#081142"/>
-              <rect x="68" y="68" width="8" height="8" fill="#081142"/>
-              <rect x="80" y="80" width="8" height="8" fill="#081142"/>
-            </svg>
-          </div>
-          <div class="text-left">
-            <span class="text-[11px] font-bold text-brand-electric uppercase tracking-wider">Scan Kamera HP</span>
-            <h4 class="text-sm font-bold text-brand-deep">Install Cepat Tanpa Cari</h4>
-            <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">
-              Arahkan kamera smartphone Anda ke QR code ini untuk membuka link unduhan otomatis.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-3">
-          <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" class="p-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white flex items-center gap-3 transition-transform hover:scale-[1.02]">
-            <i class="fa-brands fa-google-play text-2xl text-emerald-400 flex-shrink-0"></i>
-            <div class="text-left">
-              <span class="block text-[9px] uppercase tracking-wider text-slate-400">Temukan di</span>
-              <span class="block text-xs font-bold leading-tight">Google Play</span>
-            </div>
-          </a>
-          <a href="https://apple.com/app-store" target="_blank" rel="noopener noreferrer" class="p-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white flex items-center gap-3 transition-transform hover:scale-[1.02]">
-            <i class="fa-brands fa-apple text-2xl text-white flex-shrink-0"></i>
-            <div class="text-left">
-              <span class="block text-[9px] uppercase tracking-wider text-slate-400">Unduh di</span>
-              <span class="block text-xs font-bold leading-tight">App Store</span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- Content 2: Partner App -->
-      <div id="download-partner-content" class="mt-6 space-y-5 hidden relative z-10">
-        <div class="p-4 rounded-3xl bg-blue-50/70 border border-blue-100 flex items-center gap-4">
-          <div class="w-12 h-12 rounded-2xl bg-brand-deep text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
-            PRO
-          </div>
-          <div>
-            <span class="text-[11px] font-bold text-brand-blue uppercase tracking-wider">Reken Partner App</span>
-            <h4 class="text-sm font-bold text-brand-deep">Aplikasi Khusus Driver &amp; Mitra</h4>
-            <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
-              Dapatkan notifikasi order jemputan wisatawan, navigasi rute efisien, dan pencairan saldo harian.
-            </p>
-          </div>
-        </div>
-
-        <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" class="w-full p-3.5 rounded-2xl bg-brand-deep hover:bg-brand-navy text-white flex items-center justify-center gap-3 transition-transform hover:scale-[1.01]">
-          <i class="fa-brands fa-google-play text-lg text-emerald-400"></i>
-          <span class="text-xs font-bold">Download Reken Partner (Android APK / Play Store)</span>
-        </a>
-      </div>
-
-      <!-- Trust Badges in Modal -->
-      <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-around text-center text-[11px] text-slate-500 font-medium">
-        <span class="flex items-center gap-1.5"><i class="fa-solid fa-star text-amber-400"></i> 4.9 / 5.0 Rating</span>
-        <span>•</span>
-        <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-brand-blue"></i> 100% Data Aman</span>
-        <span>•</span>
-        <span class="flex items-center gap-1.5"><i class="fa-solid fa-bolt text-sky-500"></i> Versi Terbaru 2.4</span>
-      </div>
-
-    </div>
-  </div>
-
   <script src="src/script.js"></script>
-  <script>
-    // Handle Interactive Form to WhatsApp
-    const bookingForm = document.getElementById('contact-booking-form');
-    if (bookingForm) {
-      bookingForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const name = document.getElementById('form-name').value;
-        const phone = document.getElementById('form-phone').value;
-        const service = document.getElementById('form-service').value;
-        const vehicle = document.getElementById('form-vehicle').value;
-        const date = document.getElementById('form-date').value;
-        const duration = document.getElementById('form-duration').value;
-        const notes = document.getElementById('form-notes').value || '-';
-
-        const text = `Halo Admin Reken, saya ingin menanyakan reservasi sewa mobil:%0A%0A` +
-          `• *Nama:* ${encodeURIComponent(name)}%0A` +
-          `• *No. WhatsApp:* ${encodeURIComponent(phone)}%0A` +
-          `• *Layanan:* ${encodeURIComponent(service)}%0A` +
-          `• *Armada:* ${encodeURIComponent(vehicle)}%0A` +
-          `• *Tgl Sewa:* ${encodeURIComponent(date)}%0A` +
-          `• *Durasi:* ${encodeURIComponent(duration)}%0A` +
-          `• *Catatan / Rute:* ${encodeURIComponent(notes)}%0A%0A` +
-          `Mohon informasi ketersediaan unit dan total biayanya. Terima kasih!`;
-
-        window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
-      });
-    }
-  </script>
 </body>
 </html>

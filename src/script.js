@@ -1,6 +1,6 @@
 /**
- * REKEN - Landing Page & Module Interactive Logic
- * Airlume Aesthetic & Information Architecture Support
+ * REKEN - Luxury Mobility & Travel Yogyakarta
+ * Interactive Logic: Blue-Black Glassmorphism Edition
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initBookingMockup();
   initTestimonialSlider();
+  initFleetFilter();
 });
 
 /* ==========================================================================
@@ -37,20 +38,18 @@ function initNavbar() {
   }
 
   window.addEventListener('scroll', handleScroll, { passive: true });
-  // Initial run
   handleScroll();
 
-  // Robust Viewport-Based Scroll Spy
+  // Viewport-Based Scroll Spy
   function updateNavSpy() {
-    const sections = ['tentang', 'mitra', 'fitur', 'harga', 'kontak'];
+    const sections = ['beranda', 'armada', 'cara-sewa', 'keunggulan', 'wisata', 'testimoni', 'faq', 'kontak'];
     let currentActive = '';
 
     for (let i = 0; i < sections.length; i++) {
       const sec = document.getElementById(sections[i]);
       if (sec) {
         const rect = sec.getBoundingClientRect();
-        // Section is considered active if its top is within the upper half of screen
-        if (rect.top <= 240 && rect.bottom >= 120) {
+        if (rect.top <= 260 && rect.bottom >= 120) {
           currentActive = sections[i];
           break;
         }
@@ -60,11 +59,11 @@ function initNavbar() {
     if (currentActive) {
       document.querySelectorAll('.nav-link-item').forEach((link) => {
         if (link.getAttribute('data-target') === currentActive) {
-          link.classList.add('active', 'text-brand-blue');
-          link.classList.remove('text-slate-600');
+          link.classList.add('active', 'text-white');
+          link.classList.remove('text-slate-400');
         } else if (link.getAttribute('data-target')) {
-          link.classList.remove('active', 'text-brand-blue');
-          link.classList.add('text-slate-600');
+          link.classList.remove('active', 'text-white');
+          link.classList.add('text-slate-400');
         }
       });
     }
@@ -79,13 +78,12 @@ function initNavbar() {
       const targetEl = document.getElementById(targetId);
       if (targetEl) {
         e.preventDefault();
-        const islandHeight = headerIsland ? headerIsland.offsetHeight + 30 : 90;
+        const islandHeight = headerIsland ? headerIsland.offsetHeight + 35 : 100;
         const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - islandHeight;
         window.scrollTo({
           top: targetPos,
           behavior: 'smooth'
         });
-        // Update URL hash without jumping
         if (history.pushState) {
           history.pushState(null, null, `#${targetId}`);
         }
@@ -108,7 +106,6 @@ function initNavbar() {
     });
   }
 
-  // Close mobile drawer on backdrop click
   mobileDrawer?.addEventListener('click', (e) => {
     if (e.target === mobileDrawer) {
       mobileDrawer.classList.add('hidden');
@@ -116,7 +113,6 @@ function initNavbar() {
     }
   });
 
-  // Close mobile drawer on link click
   const mobileLinks = mobileDrawer?.querySelectorAll('a');
   mobileLinks?.forEach((link) => {
     link.addEventListener('click', () => {
@@ -127,43 +123,43 @@ function initNavbar() {
 }
 
 /* ==========================================================================
-   2. Airlume-Style 4-Step Interactive Switcher (How It Works)
+   2. 4-Step Interactive Switcher (Cara Sewa & Alur Reservasi)
    ========================================================================== */
 const stepsData = [
   {
     stepNumber: 'Step 01',
-    highlightTitle: 'AI Pencocokan Armada & Estimasi Tarif Instan',
+    highlightTitle: 'Pilih Armada & Tanggal Perjalanan',
     description:
-      'Pelanggan memasukkan kebutuhan perjalanan (durasi sewa, rute Jogja/luar kota, pilihan lepas kunci atau include driver). Algoritma Reken seketika memfilter armada terdekat dengan status ready dan tarif transparan tanpa biaya tersembunyi.',
-    previewRoute: 'Bandara YIA ➔ Kota Yogyakarta (Malioboro)',
-    previewFleet: 'Toyota Innova Reborn All-In',
+      'Pilih unit kendaraan yang sesuai dengan kebutuhan Anda (lepas kunci atau all-in supir). Tentukan durasi sewa, tanggal mulai, dan titik penjemputan baik di Bandara YIA, Stasiun Tugu, hotel, maupun kantor.',
+    previewRoute: 'Bandara YIA ➔ Hotel Tentrem Yogyakarta',
+    previewFleet: 'Innova Zenix Hybrid (Matic / Siap Jalan)',
     indicatorIdx: 0,
   },
   {
     stepNumber: 'Step 02',
-    highlightTitle: 'Konfirmasi Otomatis via WhatsApp Copilot',
+    highlightTitle: 'Verifikasi Digital & Booking Instan via WhatsApp',
     description:
-      'Sistem sinkronisasi WhatsApp Reken secara otomatis merespons pesan masuk pelanggan dengan draf penawaran presisi, form verifikasi KTP/SIM digital, dan invoice deposit aman tanpa perlu menunggu admin manual.',
-    previewRoute: 'Verifikasi Identitas & DP Aman',
-    previewFleet: 'Draf Balasan Otomatis WhatsApp AI Terkirim',
+      'Konfirmasi ketersediaan unit diproses secara real-time. Verifikasi dokumen (KTP & SIM A) dilakukan secara digital, aman, dan tanpa prosedur yang berbelit-belit.',
+    previewRoute: 'Verifikasi Digital Tanpa DP Rumit',
+    previewFleet: 'Konfirmasi Terkirim via WhatsApp CS',
     indicatorIdx: 1,
   },
   {
     stepNumber: 'Step 03',
-    highlightTitle: 'Penugasan Supir Handal & Rute Teroptimasi',
+    highlightTitle: 'Serah Terima Unit Bersih & Full BBM',
     description:
-      'Modul Drivers mengalokasikan pengemudi berpengalaman yang berstatus Standby. Pengemudi menerima jadwal tugas di ponsel, lengkap dengan detail tamu, titik penjemputan, dan rute wisata Yogyakarta.',
-    previewRoute: 'Sopir Siap: Mas Budi Santoso (Rating 4.9 ★)',
-    previewFleet: 'Unit Siap Bersih & Full BBM',
+      'Tim penyerahan unit Reken mengantarkan armada dalam kondisi steril, wangi, ber-AC dingin, dan BBM terisi penuh. Check list kondisi kendaraan dilakukan transparan bersama Anda.',
+    previewRoute: 'Tepat Waktu di Titik Penjemputan Anda',
+    previewFleet: 'Unit Bersih, Steril & Siap Menjelajah Jogja',
     indicatorIdx: 2,
   },
   {
     stepNumber: 'Step 04',
-    highlightTitle: 'Perjalanan Nyaman & Pelaporan Riwayat Digital',
+    highlightTitle: 'Jelajahi Jogja dengan Nyaman & Dukungan 24/7',
     description:
-      'Perjalanan terpantau real-time pada dashboard operasional. Setelah sewa selesai, sistem mencatat riwayat pemakaian, kilometer akhir, ulasan pelanggan, serta akumulasi loyalty points.',
-    previewRoute: 'Trip Selesai & Laporan Operasional Masuk',
-    previewFleet: 'Status Unit: Kembali Tersedia di Pool',
+      'Nikmati liburan atau urusan bisnis di Yogyakarta dengan rasa tenang berkat dukungan 24/7 Roadside Assistance serta proteksi perjalanan menyeluruh.',
+    previewRoute: 'Merapi, Borobudur, Malioboro, Gunungkidul',
+    previewFleet: 'Perjalanan Berkesan & Layanan Berbintang',
     indicatorIdx: 3,
   },
 ];
@@ -184,7 +180,6 @@ function initStepSwitcher() {
   function updateStepUI() {
     const data = stepsData[currentStep];
 
-    // Animasi fade halus
     stepTitleEl.style.opacity = '0';
     stepDescEl.style.opacity = '0';
 
@@ -199,30 +194,28 @@ function initStepSwitcher() {
       stepDescEl.style.opacity = '1';
     }, 150);
 
-    // Update Dots / Pills
+    // Update Dots / Pills in Dark Glass Theme
     if (dotsContainer) {
       const dots = dotsContainer.querySelectorAll('.step-dot');
       dots.forEach((dot, index) => {
         if (index === currentStep) {
-          dot.className = 'step-dot h-2 w-8 rounded-full bg-brand-blue transition-all duration-300';
+          dot.className = 'step-dot h-2 w-8 rounded-full bg-gradient-to-r from-sky-400 to-blue-500 shadow-sm shadow-sky-400/50 transition-all duration-300';
         } else {
-          dot.className = 'step-dot h-2 w-2 rounded-full bg-slate-300 transition-all duration-300';
+          dot.className = 'step-dot h-2 w-2 rounded-full bg-slate-700 hover:bg-slate-600 transition-all duration-300';
         }
       });
     }
 
-    // Toggle disabled state button styling
-    prevBtn.classList.toggle('opacity-50', currentStep === 0);
+    prevBtn.classList.toggle('opacity-40', currentStep === 0);
     prevBtn.classList.toggle('cursor-not-allowed', currentStep === 0);
-    nextBtn.classList.toggle('opacity-50', currentStep === stepsData.length - 1);
+    nextBtn.classList.toggle('opacity-40', currentStep === stepsData.length - 1);
     nextBtn.classList.toggle('cursor-not-allowed', currentStep === stepsData.length - 1);
   }
 
   function formatStepTitle(rawTitle) {
-    // Memberikan aksen warna electric blue pada kata kunci
     const parts = rawTitle.split('&');
     if (parts.length > 1) {
-      return `${parts[0]} <span class="text-brand-blue font-extrabold">& ${parts[1]}</span>`;
+      return `${parts[0]} <span class="text-sky-400 font-bold">& ${parts[1]}</span>`;
     }
     return rawTitle;
   }
@@ -241,7 +234,6 @@ function initStepSwitcher() {
     }
   });
 
-  // Inisialisasi awal
   updateStepUI();
 }
 
@@ -261,7 +253,6 @@ function initFaqAccordion() {
     trigger.addEventListener('click', () => {
       const isOpen = !content.classList.contains('hidden');
 
-      // Tutup semua item lain
       faqItems.forEach((other) => {
         const otherContent = other.querySelector('.faq-content');
         const otherIcon = other.querySelector('.faq-icon');
@@ -269,7 +260,6 @@ function initFaqAccordion() {
         otherIcon?.classList.remove('rotate-180');
       });
 
-      // Toggle status saat ini
       if (!isOpen) {
         content.classList.remove('hidden');
         icon?.classList.add('rotate-180');
@@ -283,7 +273,6 @@ function initFaqAccordion() {
    ========================================================================== */
 function initBookingMockup() {
   const searchForm = document.getElementById('hero-booking-form');
-  const toast = document.getElementById('booking-toast');
 
   if (searchForm) {
     searchForm.addEventListener('submit', (e) => {
@@ -293,8 +282,8 @@ function initBookingMockup() {
 
       showToast(`Mencari armada terbaik dari ${origin} ke ${dest}...`);
       setTimeout(() => {
-        showToast(`Tersedia 6 Unit Ready! Diskon booking hari ini 15%.`);
-      }, 1800);
+        showToast(`Tersedia 8 Unit Siap Jalan! Diskon reservasi awal 10%.`);
+      }, 1600);
     });
   }
 }
@@ -305,12 +294,12 @@ function showToast(message) {
     toast = document.createElement('div');
     toast.id = 'app-toast';
     toast.className =
-      'fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-brand-deep text-white px-5 py-3 rounded-2xl shadow-2xl border border-blue-500/30 text-sm font-medium transition-all duration-300 transform translate-y-12 opacity-0 pointer-events-none';
+      'fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#0A142F]/90 backdrop-blur-xl text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-sky-400/30 text-sm font-medium transition-all duration-300 transform translate-y-12 opacity-0 pointer-events-none';
     document.body.appendChild(toast);
   }
 
   toast.innerHTML = `
-    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+    <i class="fa-solid fa-circle-check text-sky-400 text-base"></i>
     <span>${message}</span>
   `;
 
@@ -334,16 +323,49 @@ function initTestimonialSlider() {
   if (!container || !prevBtn || !nextBtn) return;
 
   prevBtn.addEventListener('click', () => {
-    container.scrollBy({ left: -340, behavior: 'smooth' });
+    container.scrollBy({ left: -360, behavior: 'smooth' });
   });
 
   nextBtn.addEventListener('click', () => {
-    container.scrollBy({ left: 340, behavior: 'smooth' });
+    container.scrollBy({ left: 360, behavior: 'smooth' });
   });
 }
 
 /* ==========================================================================
-   6. Interactive Download App Modal (Customer & Partner Apps)
+   6. Fleet Filter Tabs
+   ========================================================================== */
+function initFleetFilter() {
+  const filterBtns = document.querySelectorAll('.fleet-filter-btn');
+  const fleetCards = document.querySelectorAll('.fleet-item-card');
+
+  if (!filterBtns.length || !fleetCards.length) return;
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-filter');
+
+      filterBtns.forEach((b) => {
+        b.classList.remove('active', 'bg-sky-500/20', 'text-sky-300', 'border-sky-400/40');
+        b.classList.add('bg-white/5', 'text-slate-400', 'border-white/10');
+      });
+
+      btn.classList.add('active', 'bg-sky-500/20', 'text-sky-300', 'border-sky-400/40');
+      btn.classList.remove('bg-white/5', 'text-slate-400', 'border-white/10');
+
+      fleetCards.forEach((card) => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+          card.classList.add('animate-fadeIn');
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+/* ==========================================================================
+   7. Interactive Download App Modal (Customer & Partner Apps)
    ========================================================================== */
 function initDownloadModal() {
   const modal = document.getElementById('download-modal');
@@ -394,18 +416,17 @@ function initDownloadModal() {
   // Switch tabs in download modal
   if (tabCustomer && tabPartner && contentCustomer && contentPartner) {
     tabCustomer.addEventListener('click', () => {
-      tabCustomer.className = 'flex-1 py-2.5 rounded-full text-xs font-bold transition-all bg-brand-deep text-white shadow-sm';
-      tabPartner.className = 'flex-1 py-2.5 rounded-full text-xs font-bold transition-all text-slate-600 hover:text-slate-900';
+      tabCustomer.className = 'flex-1 py-2.5 rounded-full text-xs font-bold transition-all bg-sky-500/20 text-sky-300 border border-sky-400/30';
+      tabPartner.className = 'flex-1 py-2.5 rounded-full text-xs font-bold transition-all text-slate-400 hover:text-white border border-transparent';
       contentCustomer.classList.remove('hidden');
       contentPartner.classList.add('hidden');
     });
 
     tabPartner.addEventListener('click', () => {
-      tabPartner.className = 'flex-1 py-2.5 rounded-full text-xs font-bold transition-all bg-brand-deep text-white shadow-sm';
-      tabCustomer.className = 'flex-1 py-2.5 rounded-full text-xs font-bold transition-all text-slate-600 hover:text-slate-900';
+      tabPartner.className = 'flex-1 py-2.5 rounded-full text-xs font-bold transition-all bg-sky-500/20 text-sky-300 border border-sky-400/30';
+      tabCustomer.className = 'flex-1 py-2.5 rounded-full text-xs font-bold transition-all text-slate-400 hover:text-white border border-transparent';
       contentPartner.classList.remove('hidden');
       contentCustomer.classList.add('hidden');
     });
   }
 }
-
