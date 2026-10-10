@@ -59,59 +59,54 @@
 
   <!-- Header Navigation -->
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 sm:py-4 px-3 sm:px-6">
-    <div id="header-island-container" class="max-w-7xl mx-auto rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between transition-all duration-300 header-island">
+    <div id="header-island-container" class="max-w-7xl mx-auto px-4 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between transition-all duration-300 header-island">
       
-      <!-- Brand Logo -->
-      <a href="index.html" class="flex items-center gap-3 group" id="brand-logo-link">
-        <div class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shadow-lg shadow-sky-500/10 transition-transform duration-300 group-hover:scale-105">
+      <!-- Brand Logo (Clean Single Line, No Subtitle Description) -->
+      <a href="index.html" class="flex items-center gap-2.5 group" id="brand-logo-link">
+        <div class="relative w-8 h-8 rounded-lg overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center p-1 transition-transform duration-300 group-hover:scale-105">
           <img src="src/images/logo.svg" alt="Reken Logo" class="w-full h-full object-contain">
         </div>
-        <div class="flex flex-col">
-          <span class="text-lg sm:text-xl font-bold tracking-tight text-white flex items-center gap-0.5 font-alt">
-            REKEN<span class="text-sky-400 font-extrabold">.ID</span>
-          </span>
-          <span class="text-[9px] uppercase tracking-widest font-semibold text-slate-400 -mt-0.5">
-            Mobilitas Eksekutif
-          </span>
-        </div>
+        <span class="text-base sm:text-lg font-bold tracking-tight text-white font-alt">
+          REKEN<span class="text-sky-400 font-extrabold">.ID</span>
+        </span>
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-medium text-slate-300" id="desktop-navigation">
-        <a href="index.html#beranda" class="nav-link-item px-3.5 py-1.5 rounded-full hover:text-white transition-all">
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2" id="desktop-navigation">
+        <a href="index.html#beranda" class="nav-link-item">
           Beranda
         </a>
-        <a href="index.html#armada" class="nav-link-item px-3.5 py-1.5 rounded-full hover:text-white transition-all">
-          Armada Kami
+        <a href="index.html#armada" class="nav-link-item">
+          Armada
         </a>
-        <a href="index.html#cara-sewa" class="nav-link-item px-3.5 py-1.5 rounded-full hover:text-white transition-all">
+        <a href="index.html#cara-sewa" class="nav-link-item">
           Cara Sewa
         </a>
-        <a href="index.html#keunggulan" class="nav-link-item px-3.5 py-1.5 rounded-full hover:text-white transition-all">
+        <a href="index.html#keunggulan" class="nav-link-item">
           Keunggulan
         </a>
-        <a href="index.html#wisata" class="nav-link-item px-3.5 py-1.5 rounded-full hover:text-white transition-all">
-          Wisata Jogja
+        <a href="index.html#wisata" class="nav-link-item">
+          Wisata
         </a>
-        <a href="tentang.html" class="nav-link-item active text-white px-3.5 py-1.5 rounded-full transition-all">
-          Tentang Kami
+        <a href="tentang.html" class="nav-link-item active">
+          Tentang
         </a>
-        <a href="kontak.html" class="nav-link-item px-3.5 py-1.5 rounded-full hover:text-white transition-all">
+        <a href="kontak.html" class="nav-link-item">
           Kontak
         </a>
       </nav>
 
       <!-- Right Action CTA -->
       <div class="hidden sm:flex items-center gap-3">
-        <a href="https://wa.me/6281234567890?text=Halo%20Reken,%20saya%20ingin%20konsultasi%20rental%20mobil%20Jogja" target="_blank" rel="noopener noreferrer" class="btn-glass-pill-outline">
-          <span>Booking Sekarang</span>
+        <a href="https://wa.me/6281234567890?text=Halo%20Reken,%20saya%20ingin%20konsultasi%20rental%20mobil%20Jogja" target="_blank" rel="noopener noreferrer" class="btn-nav-simple">
+          <span>Booking</span>
           <i class="fa-solid fa-arrow-right text-xs text-sky-400"></i>
         </a>
       </div>
 
       <!-- Mobile Button -->
       <div class="flex lg:hidden items-center gap-2">
-        <button id="mobile-menu-toggle" type="button" class="p-2 rounded-full text-slate-300 hover:text-white hover:bg-white/5 focus:outline-none" aria-label="Toggle menu">
+        <button id="mobile-menu-toggle" type="button" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 focus:outline-none" aria-label="Toggle menu">
           <i class="fa-solid fa-bars text-lg"></i>
         </button>
       </div>

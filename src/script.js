@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initHeroParallax();
   initDownloadModal();
   initStepSwitcher();
   initFaqAccordion();
@@ -429,4 +430,50 @@ function initDownloadModal() {
       contentCustomer.classList.add('hidden');
     });
   }
+}
+
+/* ==========================================================================
+   Hero Subtle Modern Motion (Micro-Parallax & Interactive Settling)
+   ========================================================================== */
+function initHeroParallax() {
+  const heroSection = document.getElementById('beranda') || document.getElementById('hero-frame');
+  const heroImg = document.getElementById('hero-bg-photo');
+  if (!heroSection || !heroImg) return;
+
+  // Respect reduced motion accessibility
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Only run micro-mouse parallax on non-touch devices
+  if (window.matchMedia('(hover: none)').matches) return;
+
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  heroSection.addEventListener('mousemove', (e) => {
+    const rect = heroSection.getBoundingClientRect();
+    const normX = (e.clientX - rect.left) / rect.width - 0.5;
+    const normY = (e.clientY - rect.top) / rect.height - 0.5;
+    // Very gentle shift (max 10px X, 6px Y)
+    targetX = normX * -10;
+    targetY = normY * -6;
+  });
+
+  heroSection.addEventListener('mouseleave', () => {
+    targetX = 0;
+    targetY = 0;
+  });
+
+  function update() {
+    currentX += (targetX - currentX) * 0.06;
+    currentY += (targetY - currentY) * 0.06;
+    heroImg.style.transform = `scale(1.02) translate(${currentX.toFixed(2)}px, ${currentY.toFixed(2)}px)`;
+    requestAnimationFrame(update);
+  }
+
+  // Start smooth tracking after initial entrance settling
+  setTimeout(() => {
+    requestAnimationFrame(update);
+  }, 2200);
 }
